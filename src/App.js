@@ -25,17 +25,18 @@ class App extends React.Component {
    
 
   render() {
-
+    const {counter , show , person}= this.state ;
     let myButton = <Button variant="outline-success" onClick={() => this.setState({ show: !this.state.show })}>Click Me</Button>
     return (
       <div className="App">
         <header className="App-header">
+        <h1>{counter}</h1>
           {myButton}
-          {this.state.show ? <div>
-            <h1>{this.state.person.fullName}</h1>
-            <h1>{this.state.person.profession}</h1>
-            <div><img src={this.state.person.imgSrc}  alt="Stephen Hawking sur sa chaise roulante "/>
-            <p>{this.state.person.bio}</p></div>
+          {show ? <div>
+            <h1>{person.fullName}</h1>
+            <h1>{person.profession}</h1>
+            <div><img src={person.imgSrc}  alt="Stephen Hawking sur sa chaise roulante "/>
+            <p>{person.bio}</p></div>
           </div>
             : null}
         </header>
